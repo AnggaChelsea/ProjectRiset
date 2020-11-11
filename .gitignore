@@ -1,0 +1,4 @@
+./application/config
+./application/language
+./application/core
+./application/helpers

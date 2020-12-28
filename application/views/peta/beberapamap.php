@@ -44,5 +44,5 @@
         </div>
       </div>
   </section>
-  <strong><a href="">HOME</a></strong>
+  <strong><a href="http://localhost/bappedash/webpemetaan/cibapeda">HOME</a></strong>
 </div>

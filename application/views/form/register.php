@@ -19,8 +19,8 @@
  <p class="text-justify">
   <h2>silahkan baca terlebih dahulu</h2>
   <p>
-  Mapping sekolah ini bertujuan untuk membantu beberapa sekolah di kabupaten sukabumi yang terisolasi 
-  atau bisa juga keberadaannya yang sangat terpelosok, dengan system mapping sekolah ini sudah di buatkan sebisa mungkin untuk membantu masyarakat dalam hal pendidikan 
+  Mapping sekolah ini bertujuan untuk membantu beberapa sekolah di kabupaten sukabumi yang terisolasi
+  atau bisa juga keberadaannya yang sangat terpelosok, dengan system mapping sekolah ini sudah di buatkan sebisa mungkin untuk membantu masyarakat dalam hal pendidikan
 </p>
   <br/>
    <iframe width="100%" height="250" style="border-radius:20px;" src="https://www.youtube.com/embed/0v3ogV5Y8L4?controls=0">
@@ -28,7 +28,7 @@
     <br />
     <p>
     <p>
-    Saya sangat berharap dengan adanya system ini bisa membantu beberapa sekolah di ketahui warga agar bisa menyekolahkan anak anaknya 
+    Saya sangat berharap dengan adanya system ini bisa membantu beberapa sekolah di ketahui warga agar bisa menyekolahkan anak anaknya
   </p>
  </p>
  <p> <b> Daftarkan sekolah anda dengan data yang sebenernya </b> </p>
@@ -55,13 +55,8 @@
     <div class="form-row">
       <div class="form-group col-md-6">
         <span><?= $this->session->flashdata('pesan'); ?></span>
-        <label for="inputEmail4">Email</label>
-        <input type="email" name="email" class="form-control" id="inputEmail4" placeholder="contoh@gmail.com" required>
-      </div>
-      <div class="form-group col-md-6">
-        <label for="inputPassword4">Password</label>
-        <input type="password" name="password" placeholder="***********" required class="form-control" id="inputPassword4">
-      </div>
+        </div>
+      
     </div>
 
      <div class="form-group">
@@ -111,12 +106,12 @@
       </div>
     </div>
 
-    <div class="form-row">
+    <!-- <div class="form-row">
       <div class="form-group col-md-6">
         <label for="inputZip">telpn Sekolah</label>
         <input type="text" name="telp_sekolah" class="form-control" >
       </div>
-    </div>
+    </div> -->
 
     <div class="form-row">
       <div class="form-group col-md-6">
@@ -135,7 +130,7 @@
     <div class="form-row">
       <div class="form-group col-md-6">
         <label for="inputZip" >longitude</label>
-        <input type="text" name="longitude" class="form-control" >
+        <input type="text" name="longitude"  class="form-control" >
       </div>
     </div>
     <b class="align-content-center"> coordinate lokasi anda saat ini </b>
@@ -148,7 +143,8 @@
     <br />
     <b> longitude </b> = <span id="longitude"></span>
     <br />
-    <span id="notfound"></span>
+    <span id="demo"></span>
+
     <br /><i>copy dan pastekan ke Form latitude dan longitude</i>
    </div>
 
@@ -164,8 +160,8 @@
 </div>
 
 </div>
-<script type="text/javascript">
 
+<script type="text/javascript">
             if('geolocation' in navigator){
                 navigator.geolocation.getCurrentPosition(position =>{
                     const lat = position.coords.latitude;
@@ -178,13 +174,4 @@
               console.log('notfound');
                 document.getElementById('geolocation not found').textContent = 'Location Tidak terdetksi';
             }
-     
 </script>
-
-
-
-<!--------- Api getlocation ------->
-
-<!--------- b94f1eb9-6d63-4abf-bd78-0545fc473ff3 ------->
-<!-- 
- 

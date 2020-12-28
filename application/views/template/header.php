@@ -18,10 +18,7 @@
                                 <li class="nav-item">
                                     <a class="nav-link" href="about.html">Tentang</a>
                                 </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="cource.html">Kelas</a>
-                                </li>
-                               
+                              
                                 <li class="nav-item dropdown" id="step-one">
                                     <a class="nav-link dropdown-toggle" href="blog.html" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                         Daftar Peta

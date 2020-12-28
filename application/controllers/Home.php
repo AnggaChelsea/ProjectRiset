@@ -79,6 +79,7 @@ class Home extends CI_Controller
 		$this->load->view('template/head', $data);
 		$this->load->view('form/register', $data);
 	}
+
 	public function registerinput()
 	{
 		$data = array(
@@ -92,7 +93,7 @@ class Home extends CI_Controller
 			'jumlah_siswa' => $this->input->post('jumlah_siswa'),
 			'jumlah_guru' => $this->input->post('jumlah_guru'),
 			'kepala_sekolah' => $this->input->post('kepala_sekolah'),
-			'telp_sekolah' => $this->input->post('telp_sekolah'),
+			// 'telp_sekolah' => $this->input->post('telp_sekolah'),
 			'akreditasi' => $this->input->post('akreditasi'),
 			'latitude' => $this->input->post('latitude'),
 			'longitude' => $this->input->post('longitude'),

@@ -1,49 +1,78 @@
- <section class="breadcrumb breadcrumb_bg">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="breadcrumb_iner text-center">
-                        <div class="breadcrumb_iner_item">
-                            <h2>Data List Sekolah</h2>
-                            <p>Logo<span>-&-</span>Nama Sekolah</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+
+
+
+
+    <style type="text/css">
+    tfoot input {
+        width: 100%;
+        padding: 3px;
+        box-sizing: border-box;
+    }
+    .container{
+    position:relative;
+    }
+    </style>
+
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.22/css/jquery.dataTables.min.css">
 
 <div class="container">
-<div class="section-top-border">
-				<h3 class="mb-30">Table</h3>
-				<div class="progress-table-wrap">
-					<div class="progress-table">
-						<div class="table-head">
-							<div class="serial">#</div>
-							<div class="country">Nama Sekolah</div>
-							<div class="country">Alamat</div>
-							<div class="country">Kelurahan</div>
-							<div class="country">kecamatan</div>
-							<div class="country">jumlah_siswa</div>
-							<div class="country">jumlah_guru</div>
-							<div class="country">kepala_sekolah</div>
-							<div class="visit">telp_sekolah</div>
-							<div class="percentage">akreditasi</div>
-						</div>
-						<?php foreach ($datapeta as $key){?>
-						<div class="table-row">
-							<div class="serial"><?=$key['npsn']  ?></div>
-							<div class="country"> <img src="<?= base_url()?>template/img/elements/f1.jpg" alt="flag"><?= $key['nama_sekolah'] ?></div>
-							<div class="visit"><?= $key['alamat'] ?></div>
-							<div class="percentage">
-								<div class="progress">
-									<div class="progress-bar color-1" role="progressbar" style="width: 80%" aria-valuenow="80" aria-valuemin="0"
-									 aria-valuemax="100"></div>
-								</div>
-							</div>
-						</div>
-						<?php } ?>
-					</div>
-				</div>
-			</div>
-		</div>
+    <table id="example" class="display" style="width:100%">
+        <thead>
+            <tr>
+                <th>Nspn</th>
+                <th>Nama Sekolah</th>
+                <th>alamat</th>
+                <th>kecamatan</th>
+                <th>kelurahan</th>
+                <th>jumlah_guru</th>
+                <th>jumlah_siswa</th>
+                <th>kepala_sekolah</th>
+            </tr>
+        </thead>
+        <tbody>
+    <?php foreach ($datapeta as $key){?>
+            <tr>
+                <td><?=$key['npsn']  ?></td>
+                <td><?= $key['nama_sekolah'] ?></td>
+                <td><?= $key['alamat'] ?></td>
+                <td><?= $key['kecamatan'] ?></td>
+                <td><?= $key['desa'] ?></td>
+                <td><?= $key['jumlah_guru'] ?></td>
+                <td><?= $key['jumlah_siswa'] ?></td>
+                <td><?= $key['kepala_sekolah'] ?></td>
+            </tr>
+	<?php } ?>
+        </tbody>
+    </table>
+</div>
+
+<script src="https://cdn.datatables.net/1.10.22/js/jquery.dataTables.min.js"></script>
+<script>
+$(document).ready(function() {
+    // Setup - add a text input to each footer cell
+    $('#example tfoot th').each( function () {
+        var title = $(this).text();
+        $(this).html( '<input type="text" placeholder="Search '+title+'" />' );
+    } );
+ 
+    // DataTable
+    var table = $('#example').DataTable({
+        initComplete: function () {
+            // Apply the search
+            this.api().columns().every( function () {
+                var that = this;
+ 
+                $( 'input', this.footer() ).on( 'keyup change clear', function () {
+                    if ( that.search() !== this.value ) {
+                        that
+                            .search( this.value )
+                            .draw();
+                    }
+                } );
+            } );
+        }
+    });
+ 
+} );
+
+</script>
